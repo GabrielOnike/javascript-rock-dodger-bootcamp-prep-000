@@ -127,7 +127,7 @@ function endGame() {
 }
 
 function moveDodger(e) {
-  const code  = e.which 
+  const code  = e.which
 
   if e.which === LEFT_ARROW {return e.preventDefault()};
   if e.which === LEFT_ARROW {return e.stopPropagation()};
