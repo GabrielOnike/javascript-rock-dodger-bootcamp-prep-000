@@ -134,14 +134,13 @@ function moveDodger(e) {
     e.stopPropagation();
   }
   // implement me!
-  document.addEventListener ('keydown',function(e){
     if (e.which === LEFT_ARROW){
       moveDodgerLeft();
     }
     else if (e.which === RIGHT_ARROW){
       moveDodgerRight();
     }
-  });
+  };
   /**
    * This function should call `moveDodgerLeft()`
    * if the left arrow is pressed and `moveDodgerRight()`
