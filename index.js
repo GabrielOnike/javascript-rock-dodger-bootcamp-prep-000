@@ -127,6 +127,7 @@ function endGame() {
 }
 
 function moveDodger(e) {
+  const code  = e.which 
   // implement me!
   document.addEventListener ('keydown',function(e){
     if (e.which ===37){
