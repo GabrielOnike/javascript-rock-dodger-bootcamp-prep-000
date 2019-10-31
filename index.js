@@ -96,7 +96,7 @@ function createRock(x) {
      * we should remove the rock from the DOM
      */
      else if (ROCK.style.bottom === GAME.style.bottom){
-       
+
      }
   }
 
