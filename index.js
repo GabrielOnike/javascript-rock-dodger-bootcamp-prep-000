@@ -80,7 +80,7 @@ function createRock(x) {
      * we should call endGame()
      */
      if (ROCK.style.top === DODGER.style.top) {
-       endGame();
+       return endGame();
      }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
