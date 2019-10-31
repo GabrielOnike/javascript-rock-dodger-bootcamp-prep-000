@@ -117,7 +117,7 @@ function createRock(x) {
 function endGame(z) {
   z.splice(gameInterval);
   z.splice(ROCKS);
-  z.splice(document.removeEventListener('keydown', moveDodger);
+  z.splice(document.removeEventListener(moveDodger()));
 }
 
 function moveDodger(e) {
