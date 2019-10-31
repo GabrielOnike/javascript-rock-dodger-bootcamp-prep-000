@@ -40,14 +40,14 @@ function checkCollision(rock) {
          ||(rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge)
          ||(rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)
               /**
-               * Think about it -- what's happening here?
+               * look at the code above 
                * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
+               * 1. The rock's left edge is < or = the DODGER's left edge,
+               *    and the rock's right edge is > or = the DODGER's left edge;
+               * 2. The rock's left edge is > or = the DODGER's left edge,
+               *    and the rock's right edge is < or = the DODGER's right edge;
+               * 3. The rock's left edge is < or = the DODGER's right edge,
+               *    and the rock's right edge is > or = the DODGER's right edge
                */) {
       return true
     }
