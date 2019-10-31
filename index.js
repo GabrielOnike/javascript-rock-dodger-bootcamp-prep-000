@@ -29,14 +29,17 @@ function checkCollision(rock) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
     // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-    const dodgerRightEdge = 0;
+    const dodgerRightEdge = dodgerLeftEdge + 40;
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
     // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-    const rockRightEdge = 0;
+    const rockRightEdge = rockLeftEdge + 20;
 
-    if (false /**
+    if (   (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge)
+         ||(rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge)
+         ||(rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)
+              /**
                * Think about it -- what's happening here?
                * There's been a collision if one of three things is true:
                * 1. The rock's left edge is < the DODGER's left edge,
@@ -67,7 +70,6 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
   GAME.push('rock')
-
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
@@ -87,12 +89,15 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
      else if (ROCK.style.bottom < GAME.style.bottom){
-
+       ROCK.style.top = `${top - 4}px`
      }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
+     else if (ROCK.style.bottom === GAME.style.bottom){
+       
+     }
   }
 
   // We should kick of the animation of the rock around here
