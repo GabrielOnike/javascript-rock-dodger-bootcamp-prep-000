@@ -66,7 +66,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-
+  GAME.push('rock')
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -79,12 +79,16 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-
+     if (ROCK.style.top === DODGER.style.top) {
+       endGame()
+     }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
+     else if (ROCK.style.bottom < GAME.style.bottom){
 
+     }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
@@ -112,6 +116,14 @@ function endGame() {
 
 function moveDodger(e) {
   // implement me!
+  document.addEventListener ('keydown',function(e){
+    if (e.which ===37){
+      moveDodgerLeft();
+    }
+    else if (e.which === 39){
+      moveDodgerRight();
+    }
+  })
   /**
    * This function should call `moveDodgerLeft()`
    * if the left arrow is pressed and `moveDodgerRight()`
@@ -123,14 +135,35 @@ function moveDodger(e) {
 
 function moveDodgerLeft() {
   // implement me!
+ var leftNumbers = DODGER.style.left.replace('px', '')
+ var left = parseInt(leftNumbers, 10)
+
+ if (left > 0) {
+   DODGER.style.left = `${left - 4}px`
+ }
+ if (left < 400) {
+   window.requestAnimationFrame(leftNumbers)
+ }
+ window.requestAnimationFrame(rightNumbers)
+}
   /**
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-}
+
 
 function moveDodgerRight() {
   // implement me!
+  var rightNumbers = DODGER.style.right.replace('px','')
+  var right = parseInt(rightNumbers,10)
+
+  if (right>0){
+    DODGER.style.right = `${right -4}px`
+  }
+  if (right< 400){
+    window.requestAnimationFrame(rightNumbers)
+  }
+  window.requestAnimationFrame(rightNumbers)
   /**
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
