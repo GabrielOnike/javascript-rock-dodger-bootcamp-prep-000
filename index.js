@@ -94,7 +94,7 @@ function createRock(x) {
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-     else  {GAME.splice('rock') };
+     else  {rock.remove() };
      }
   }
   window.requestAnimationFrame(moveRock)
