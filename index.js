@@ -95,7 +95,7 @@ function createRock(x) {
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-     else if (ROCK.style.bottom === GAME.style.bottom){                                                                               
+     else if (ROCK.style.bottom === GAME.style.bottom){
       GAME.splice('rock');
      }
   }
