@@ -116,7 +116,7 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-  z.splice(ROCKS);
+  
   document.removeEventListener(moveDodger()));
 }
 
