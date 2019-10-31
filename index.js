@@ -82,21 +82,21 @@ function createRock(x) {
      * we should call endGame()
      */
      if (ROCK.style.top === DODGER.style.top) {
-       endGame()
+       endGame();
      }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
      else if (ROCK.style.bottom < GAME.style.bottom){
-       ROCK.style.top = `${top - 4}px`
+       ROCK.style.top = `${top - 4}px`;
      }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-     else if (ROCK.style.bottom === GAME.style.bottom){
-
+     else if (ROCK.style.bottom === GAME.style.bottom){                                                                               
+      GAME.splice('rock');
      }
   }
 
