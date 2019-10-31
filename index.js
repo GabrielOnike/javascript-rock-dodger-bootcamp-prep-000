@@ -129,8 +129,10 @@ function endGame() {
 function moveDodger(e) {
   const code  = e.which
 
-  if e.which === LEFT_ARROW {return e.preventDefault()};
-  if e.which === LEFT_ARROW {return e.stopPropagation()};
+  if([LEFT_ARROW, RIGHT_ARROW].indexOf(e.which) > -1){
+    e.preventDefault();
+    e.stopPropagation();
+  }
   // implement me!
   document.addEventListener ('keydown',function(e){
     if (e.which ===37){
