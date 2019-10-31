@@ -115,9 +115,9 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  clearInterval(gameInterval)
+  clearInterval(gameInterval);
   z.splice(ROCKS);
-  z.splice(document.removeEventListener(moveDodger()));
+  document.removeEventListener(moveDodger()));
 }
 
 function moveDodger(e) {
