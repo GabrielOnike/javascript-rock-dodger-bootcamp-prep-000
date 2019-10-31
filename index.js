@@ -140,7 +140,7 @@ function moveDodger(e) {
     else if (e.which === RIGHT_ARROW){
       moveDodgerRight();
     }
-  
+
   /**
    * This function should call `moveDodgerLeft()`
    * if the left arrow is pressed and `moveDodgerRight()`
